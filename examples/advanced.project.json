@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "projectId": "example-service",
+  "repository": {
+    "provider": "github",
+    "name": "example/python-project"
+  },
+  "base": {
+    "remote": "origin",
+    "branch": "trunk"
+  },
+  "factory": {
+    "repository": "OO-innovation-labs/AutomaticChickenFactory",
+    "revision": "0000000000000000000000000000000000000000"
+  },
+  "toolchain": {
+    "probes": [
+      [
+        "python3",
+        "--version"
+      ]
+    ]
+  },
+  "areas": {
+    "core": {
+      "paths": [
+        "src/"
+      ],
+      "patterns": [
+        "core"
+      ],
+      "owner": "python-engineer"
+    },
+    "security": {
+      "paths": [
+        "src/auth/"
+      ],
+      "patterns": [
+        "authentication",
+        "isolation"
+      ],
+      "owner": "security-engineer"
+    }
+  },
+  "roles": {
+    "python-engineer": {
+      "extends": "engineer",
+      "mission": "Implement and verify Python changes",
+      "skills": [
+        ".agents/skills/python/SKILL.md"
+      ]
+    },
+    "security-engineer": {
+      "extends": "engineer",
+      "mission": "Review service isolation and authentication",
+      "skills": [
+        ".agents/skills/security/SKILL.md"
+      ]
+    }
+  },
+  "checks": [
+    {
+      "name": "unit",
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests"
+      ],
+      "phase": "validation",
+      "required": true
+    },
+    {
+      "name": "integration",
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "integration"
+      ],
+      "phase": "acceptance",
+      "required": true,
+      "services": [
+        "test-database"
+      ]
+    }
+  ],
+  "knowledge": {
+    "glossary": "GLOSSARY.md",
+    "adrs": "docs/adr/",
+    "skills": ".agents/skills/",
+    "runbooks": "docs/runbooks/"
+  },
+  "adapters": {
+    "git": {
+      "provider": "git",
+      "version": 1
+    },
+    "issues": {
+      "provider": "github",
+      "version": 1
+    },
+    "ci": {
+      "provider": "github-actions",
+      "version": 1
+    },
+    "release": {
+      "provider": "project-script",
+      "version": 1,
+      "runbook": "docs/runbooks/release.md"
+    }
+  }
+}

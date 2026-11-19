@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "projectId": "example-python",
+  "repository": {
+    "provider": "github",
+    "name": "example/python-project"
+  },
+  "base": {
+    "remote": "origin",
+    "branch": "trunk"
+  },
+  "factory": {
+    "repository": "OO-innovation-labs/AutomaticChickenFactory",
+    "revision": "0000000000000000000000000000000000000000"
+  },
+  "toolchain": {
+    "probes": [
+      [
+        "python3",
+        "--version"
+      ]
+    ]
+  },
+  "areas": {
+    "core": {
+      "paths": [
+        "src/"
+      ],
+      "patterns": [
+        "core"
+      ],
+      "owner": "python-engineer"
+    }
+  },
+  "roles": {
+    "python-engineer": {
+      "extends": "engineer",
+      "mission": "Implement and verify Python changes",
+      "skills": [
+        ".agents/skills/python/SKILL.md"
+      ]
+    }
+  },
+  "checks": [
+    {
+      "name": "unit",
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests"
+      ],
+      "phase": "validation",
+      "required": true
+    }
+  ],
+  "knowledge": {
+    "glossary": "GLOSSARY.md",
+    "adrs": "docs/adr/",
+    "skills": ".agents/skills/",
+    "runbooks": "docs/runbooks/"
+  },
+  "adapters": {
+    "git": {
+      "provider": "git",
+      "version": 1
+    },
+    "issues": {
+      "provider": "github",
+      "version": 1
+    },
+    "ci": {
+      "provider": "github-actions",
+      "version": 1
+    }
+  }
+}
