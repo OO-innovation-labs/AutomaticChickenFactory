@@ -17,9 +17,15 @@ Origin: [OOlivetranslator issue #208](https://github.com/OO-innovation-labs/OOli
 - [Operations and release design](docs/operations.md)
 - [Source inventory](docs/inventory.md)
 - [Repository and precedence decision](docs/adr/0001-factory-home-and-project-boundary.md)
+- [Home Repo pattern decision](docs/adr/0002-home-repo-pattern.md)
+- [Current command guide (snapshot)](docs/factory-commands.md)
 
 ## Review this repository
 
 Run `python3 scripts/check-specs.py` to check local document links and example structure. CI runs the same check. This validates the specification artifacts, not factory functionality.
 
 Contributions should identify the requirement and acceptance scenario they affect. Implementation begins with the baseline milestone in the roadmap. This publication does not mark issue #208 complete or authorize application merges, production changes, or migration cutover.
+
+## Home Repo
+
+This repository is also the Home Repo: run factory sessions from here. `AGENTS.md` lists the consumer repos, and shared factory skills live in `skills/` (also exposed as `.claude/skills`).
