@@ -30,7 +30,8 @@ Before starting any worker, apply the assignment rubric in `docs/factory.md`.
 Record the class and deciding evidence for each new assignment, including handoffs
 and supporting delegations. Claim factory jobs with a stable session identity. Include actual host
 token telemetry when exposed; otherwise omit token fields and retain the explicit
-unavailable-enforcement record. Checkpoint proactively without inventing usage or
+unavailable-enforcement record. A checkpoint cites the commit SHA that holds the work so far; commit first, per the
+`factory-build` cadence. Checkpoint proactively without inventing usage or
 sign-off. Provide the leased dispatch packet and assigned skill to a fresh worker
 context.
 Pass its exact resolved model/effort (provider from `FACTORY_PROVIDER` or direction.json); stop for a resource decision if unavailable. Delegate
