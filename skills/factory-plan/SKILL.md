@@ -31,7 +31,9 @@ For work planning, group invariants the reviewer must understand together. Split
 independent outcomes at safe behavior/module boundaries, preserving intermediate
 compatibility and integrated regressions. Use the diff assessment in `docs/factory.md`;
 size signals a judgment call, not an automatic split. Link children/dependencies
-natively and identify the integration owner.
+natively and identify the integration owner. Give each idea (as `factory-manager`
+defines it) its own issue; within an issue, order the slices so each is one or more
+atomic commits that leave the branch working.
 
 Before implementation, plan through the requested delivery endpoint: ordered slices,
 dependencies, accountable integration owner, checks and evidence, independent review,

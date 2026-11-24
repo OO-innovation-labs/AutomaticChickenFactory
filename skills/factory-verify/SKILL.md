@@ -22,6 +22,8 @@ return failures with reproduction, impact and revision; pass to code review.
 Review: inspect the complete diff, scope, invariant groups, cross-group assumptions,
 safe split alternatives and diagram accuracy. Small file counts do not prove a
 simple review. Keep-together exceptions need a separate architecture decision.
+Read the branch commit by commit as well as whole: return a commit that mixes ideas,
+or a commit that serves no acceptance criterion, as a split finding.
 Record actionable findings or revision-bound review evidence.
 
 Release: confirm matching acceptance/review, artifact identity, migration and rollback
