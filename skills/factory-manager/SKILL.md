@@ -34,8 +34,21 @@ Load only the matching skill; do not read every department.
 
 A bounded request with clear scope goes straight to `factory-build` or the relevant
 skill without a factory job. An unspecified or multi-part request goes to
-`factory-plan` first; split independent outcomes into separate routes. When two
+`factory-plan` first. When two
 routes fit, take the earlier stage (plan before build) rather than guessing.
+
+### Compartmentalize ideas
+
+An idea is one outcome that could ship, be rejected or be reverted without the
+others. Before routing, list every idea in the request, with one line each for
+outcome and dependencies. Each gets its own route, branch and PR, and its own issue
+when it is tracked or deferred. Ideas that share a file but not an outcome stay
+separate; base a dependent idea's branch on the one it needs and say so in its PR.
+Ideas that are unsafe or meaningless apart are one idea.
+
+When the user raises a new idea mid-task, commit the current step, add the idea to
+the list and route it through step 3. Triage ideas workers parked: route each, file
+it or tell the user why it was dropped. Report every listed idea in step 6.
 
 ## 3. Decide the checkout
 
@@ -50,15 +63,14 @@ ahead of main, local changes):
   `pnpm factory preflight` there, work there and publish its own draft PR.
 - **Unclear**: ask one question naming both readings.
 
-One independent outcome gets one branch and one PR. Never stash or discard the
-current checkout's work to make room.
+Never stash or discard the current checkout's work to make room.
 
 ## 4. Explain the route before acting
 
 After steps 1 to 3 and before any edit, issue, branch or delegation, state a routing
 decision in chat, then do not wait unless a gate in step 3 requires an answer:
 
-- **Request**: the outcome as you understood it, and any assumption.
+- **Request**: each idea as you understood it, and any assumption.
 - **Route**: the skill(s) chosen, the nearest alternative you rejected and why.
 - **Checkout**: current or new worktree, with the evidence (branch, PR, changes).
 - **Authority**: what you will do under the session's authorization and what you
@@ -80,5 +92,5 @@ authorization, any merge, deployment or production change.
 ## 6. Report
 
 Lead with: the route chosen and why (and whether it matched the stated decision), the checkout decision (current or new worktree
-and branch), what was done, links (always the PR URL when one exists, also on request), and the next decision for the user. Report
+and branch), what was done, each idea with its branch, issue or disposition, links (always the PR URL when one exists, also on request), and the next decision for the user. Report
 blockers and unverified items plainly.
