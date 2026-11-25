@@ -25,7 +25,7 @@ recovery. Select an implementation approach only after those scenarios are clear
 
 Curate duplicates/stale requests from evidence. Reproduce reports and define expected
 behavior, scope, meaningful checks and one accountable owner. Product uncertainty
-needs a bounded decision; operator/caption behavior uses `event-production-ui`.
+needs a bounded decision; domain behavior uses the project's specialist skills.
 
 For work planning, group invariants the reviewer must understand together. Split
 independent outcomes at safe behavior/module boundaries, preserving intermediate
@@ -42,6 +42,10 @@ capacity across implementation, integration, verification and a bounded repair p
 Identify unavailable access, telemetry or provider evaluation before promising delivery;
 record the next action and distinguish local tests from live product evidence. Replan
 remaining work and preserve verification capacity when assumptions or limits change.
+
+A decision is settled when it is in the issue or an ADR. After any discussion that
+settles one, update the issue (or prepare the exact text when issue edits are outside
+session authorization) and correct wording it contradicts. Mark open points as open.
 
 Keep specs in GitHub Issues with `--body-file` for multiline changes. Hand off only
 when acceptance, dependencies, ownership and verification are clear; route an already

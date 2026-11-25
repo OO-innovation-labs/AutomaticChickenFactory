@@ -12,7 +12,17 @@ the user's explicit request.
 
 ## 1. Orient
 
-Run `pnpm factory preflight` in the current checkout. Record branch, base SHA, local
+When the selected repository's `package.json` has no `factory` script, read
+`docs/without-engine.md` in the Home Repo and point every worker's brief at it.
+
+Run the selected repository's preflight: `pnpm factory preflight` when its
+`package.json` has a `factory` script, otherwise its `preflight` script. If it has
+neither, check by hand (fetch, branch and base, local changes, toolchain versions,
+required services) and create a `preflight` script there as its own idea, following
+that repository's toolchain. A preflight is read-only, prints no secrets, and reports
+per check what failed and the command that fixes it. It also probes the credentials
+the planned work needs, such as `gh` and cloud CLI logins and documentation connectors;
+resolve a failed probe before the work that depends on it. Record branch, base SHA, local
 changes, ahead commits and the open PR for this branch (`gh pr view`). Read the
 user's request for the endpoint they want (answer, issue, PR, release, diagnosis).
 Questions that need no change are answered directly; no job, branch or PR.
@@ -60,8 +70,12 @@ ahead of main, local changes):
 - **Unrelated**: it has a different outcome, issue or area. Do not add it to this
   branch. Preserve existing changes, create a new worktree and branch from the
   refreshed `origin/main` (`git worktree add -b BRANCH PATH origin/main`), run
-  `pnpm factory preflight` there, work there and publish its own draft PR.
+  that preflight there, work there and publish its own draft PR.
 - **Unclear**: ask one question naming both readings.
+
+When the user adds an outcome to a candidate already frozen or in review, stop and state
+the split: the accepted part ships alone and the addition gets a stacked branch and PR.
+Keep them together only on the user's word.
 
 Never stash or discard the current checkout's work to make room.
 
@@ -88,6 +102,28 @@ PRs as the user's authenticated `gh` identity, following `docs/factory.md`
 (delivery endpoint, CI watch, evidence). Say in each issue or PR that it was opened
 by the manager for the user. Stop and ask before any action outside this session's
 authorization, any merge, deployment or production change.
+
+Before dispatch, reread the issue, its comments and linked ADRs, and compare them with
+the decisions the user made in this and related sessions. Resolve each difference with
+the user, then brief from the issue. Keep handoffs where the next session can find
+them: the issue or PR first, the group's shared notes folder otherwise, never a system
+temp directory.
+
+For work in several slices, name one coordinating session. It alone starts slices and
+changes their scope, and relays the user's approvals with their exact words; check the
+source before acting on a relayed one. Workers report to it on a verdict, a blocker or
+a scope change only. A side session that produces a patch, finding or decision sends it
+to the session that owns the work, and that owner acknowledges it.
+
+### Local resources
+
+Reuse a running stack before starting another. Verification gets one named stack per
+project, reused between rounds and stopped after each. Build the shared demo only from
+current `main`, or a commit the user names. Each session keeps a list of the stacks,
+servers, browsers and worktrees it starts; at handoff it stops and removes exactly
+those and reports the rest. Run `scripts/leftovers.py REPO` from the Home Repo at
+orientation and handoff. Removing anything another session or the user started, or any
+data volume, needs the user's word. Put these limits in every worker's brief.
 
 ## 6. Report
 

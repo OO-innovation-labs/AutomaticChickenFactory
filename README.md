@@ -19,6 +19,7 @@ Origin: [OOlivetranslator issue #208](https://github.com/OO-innovation-labs/OOli
 - [Repository and precedence decision](docs/adr/0001-factory-home-and-project-boundary.md)
 - [Home Repo pattern decision](docs/adr/0002-home-repo-pattern.md)
 - [Current command guide (snapshot)](docs/factory-commands.md)
+- [Working without the engine](docs/without-engine.md)
 
 ## Review this repository
 

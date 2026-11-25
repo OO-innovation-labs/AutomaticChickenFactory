@@ -10,7 +10,7 @@ coordination here; delegate bounded supporting work only after that. Consult rep
 instructions and factory records for context. Contact another chat only when the user
 explicitly requests it; an existing factory chat is not the default entry point.
 
-Before routing or editing, run `pnpm factory preflight` from the selected checkout.
+Before routing or editing, run the preflight (`factory-manager` step 1) from the selected checkout.
 Resolve the reported readiness failures while preserving unrelated work. If the local
 factory entry point is absent, inspect Git status and current main before searching
 other installations; update safely or read the instructions from that revision.

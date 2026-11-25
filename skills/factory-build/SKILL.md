@@ -15,7 +15,10 @@ listed in its `AGENTS.md`. Inspect all consumers of changed state. API/data work
 packaging/deployment uses the project's build/deploy skill and environment runbook.
 
 Reproduce behavioral defects with meaningful failing regressions where practical.
-Exercise affected integration seams and current CI checks. Explain invariant groups
+Exercise affected integration seams and current CI checks. Before freezing, probe
+the states that recur in rejected candidates wherever the change touches them: races
+and double submission, two tabs or editors, lost connection and retry, reload with
+unsaved input, switching user or record, parallel runs. Explain invariant groups
 and safe split boundaries; use `assess-diff` from `docs/factory.md` before handoff.
 Keep implementation files bounded rather than concentrating a large diff in one.
 
