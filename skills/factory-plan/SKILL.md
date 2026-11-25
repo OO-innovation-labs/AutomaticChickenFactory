@@ -43,6 +43,10 @@ Identify unavailable access, telemetry or provider evaluation before promising d
 record the next action and distinguish local tests from live product evidence. Replan
 remaining work and preserve verification capacity when assumptions or limits change.
 
+A decision is settled when it is in the issue or an ADR. After any discussion that
+settles one, update the issue (or prepare the exact text when issue edits are outside
+session authorization) and correct wording it contradicts. Mark open points as open.
+
 Keep specs in GitHub Issues with `--body-file` for multiline changes. Hand off only
 when acceptance, dependencies, ownership and verification are clear; route an already
 ready issue directly. Analysis is not implementation completion.

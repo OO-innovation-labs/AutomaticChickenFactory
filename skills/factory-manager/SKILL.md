@@ -89,6 +89,12 @@ PRs as the user's authenticated `gh` identity, following `docs/factory.md`
 by the manager for the user. Stop and ask before any action outside this session's
 authorization, any merge, deployment or production change.
 
+Before dispatch, reread the issue, its comments and linked ADRs, and compare them with
+the decisions the user made in this and related sessions. Resolve each difference with
+the user, then brief from the issue. Keep handoffs where the next session can find
+them: the issue or PR first, the group's shared notes folder otherwise, never a system
+temp directory.
+
 ## 6. Report
 
 Lead with: the route chosen and why (and whether it matched the stated decision), the checkout decision (current or new worktree
