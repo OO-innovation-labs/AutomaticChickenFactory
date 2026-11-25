@@ -115,6 +115,16 @@ source before acting on a relayed one. Workers report to it on a verdict, a bloc
 a scope change only. A side session that produces a patch, finding or decision sends it
 to the session that owns the work, and that owner acknowledges it.
 
+### Local resources
+
+Reuse a running stack before starting another. Verification gets one named stack per
+project, reused between rounds and stopped after each. Build the shared demo only from
+current `main`, or a commit the user names. Each session keeps a list of the stacks,
+servers, browsers and worktrees it starts; at handoff it stops and removes exactly
+those and reports the rest. Run `scripts/leftovers.py REPO` from the Home Repo at
+orientation and handoff. Removing anything another session or the user started, or any
+data volume, needs the user's word. Put these limits in every worker's brief.
+
 ## 6. Report
 
 Lead with: the route chosen and why (and whether it matched the stated decision), the checkout decision (current or new worktree
