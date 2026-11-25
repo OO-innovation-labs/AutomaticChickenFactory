@@ -32,7 +32,7 @@ or a commit that serves no acceptance criterion, as a split finding.
 Record actionable findings or revision-bound review evidence.
 
 Release: confirm matching acceptance/review, artifact identity, migration and rollback
-readiness. Use `oolive-build-deploy` and the target runbook; execute only the authorized
+readiness. Use the project's build/deploy skill and the target runbook; execute only the authorized
 action. Production verification checks serving identity, health and acceptance.
 Complete only with matching implementation, quality, release and production evidence.
 Preparation, saved descriptions and parsed diagrams are distinct from deployed or
