@@ -99,6 +99,12 @@ the user, then brief from the issue. Keep handoffs where the next session can fi
 them: the issue or PR first, the group's shared notes folder otherwise, never a system
 temp directory.
 
+For work in several slices, name one coordinating session. It alone starts slices and
+changes their scope, and relays the user's approvals with their exact words; check the
+source before acting on a relayed one. Workers report to it on a verdict, a blocker or
+a scope change only. A side session that produces a patch, finding or decision sends it
+to the session that owns the work, and that owner acknowledges it.
+
 ## 6. Report
 
 Lead with: the route chosen and why (and whether it matched the stated decision), the checkout decision (current or new worktree
