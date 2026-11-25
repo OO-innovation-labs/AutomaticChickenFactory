@@ -12,7 +12,14 @@ the user's explicit request.
 
 ## 1. Orient
 
-Run `pnpm factory preflight` in the current checkout. Record branch, base SHA, local
+Run the selected repository's preflight: `pnpm factory preflight` when its
+`package.json` has a `factory` script, otherwise its `preflight` script. If it has
+neither, check by hand (fetch, branch and base, local changes, toolchain versions,
+required services) and create a `preflight` script there as its own idea, following
+that repository's toolchain. A preflight is read-only, prints no secrets, and reports
+per check what failed and the command that fixes it. It also probes the credentials
+the planned work needs, such as `gh` and cloud CLI logins and documentation connectors;
+resolve a failed probe before the work that depends on it. Record branch, base SHA, local
 changes, ahead commits and the open PR for this branch (`gh pr view`). Read the
 user's request for the endpoint they want (answer, issue, PR, release, diagnosis).
 Questions that need no change are answered directly; no job, branch or PR.
@@ -60,7 +67,7 @@ ahead of main, local changes):
 - **Unrelated**: it has a different outcome, issue or area. Do not add it to this
   branch. Preserve existing changes, create a new worktree and branch from the
   refreshed `origin/main` (`git worktree add -b BRANCH PATH origin/main`), run
-  `pnpm factory preflight` there, work there and publish its own draft PR.
+  that preflight there, work there and publish its own draft PR.
 - **Unclear**: ask one question naming both readings.
 
 When the user adds an outcome to a candidate already frozen or in review, stop and state
