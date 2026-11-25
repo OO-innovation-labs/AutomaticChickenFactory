@@ -63,6 +63,10 @@ ahead of main, local changes):
   `pnpm factory preflight` there, work there and publish its own draft PR.
 - **Unclear**: ask one question naming both readings.
 
+When the user adds an outcome to a candidate already frozen or in review, stop and state
+the split: the accepted part ships alone and the addition gets a stacked branch and PR.
+Keep them together only on the user's word.
+
 Never stash or discard the current checkout's work to make room.
 
 ## 4. Explain the route before acting
