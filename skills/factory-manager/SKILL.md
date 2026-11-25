@@ -12,6 +12,9 @@ the user's explicit request.
 
 ## 1. Orient
 
+When the selected repository's `package.json` has no `factory` script, read
+`docs/without-engine.md` in the Home Repo and point every worker's brief at it.
+
 Run the selected repository's preflight: `pnpm factory preflight` when its
 `package.json` has a `factory` script, otherwise its `preflight` script. If it has
 neither, check by hand (fetch, branch and base, local changes, toolchain versions,
