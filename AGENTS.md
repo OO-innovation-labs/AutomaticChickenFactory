@@ -12,6 +12,7 @@ assigned role's skill only. The specification lives in `docs/`; read
 `docs/project-contract.md` before changing what a project may configure.
 `docs/factory-commands.md` documents the current command surface, which still runs
 from the product checkout until engine extraction (roadmap M2).
+`docs/skill-graph.md` shows how the skills hand work to each other.
 Factory configuration never expands session authorization or grants production access.
 
 ## Other Repos
