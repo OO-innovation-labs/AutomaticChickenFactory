@@ -5,7 +5,7 @@ description: Implement a ready issue in its assigned product area and hand off a
 
 # Factory Build
 
-Use the assigned contract in dispatch; if absent, run `pnpm factory contract ROLE`.
+Use the assigned contract in dispatch; if absent, use this skill and the project's `AGENTS.md`.
 Read issue/dependency outcomes,
 root glossary and relevant ADRs. Preserve unrelated work and the selected checkout;
 one integration owner coordinates supporting changes to shared files.

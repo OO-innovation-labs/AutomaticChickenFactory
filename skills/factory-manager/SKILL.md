@@ -12,7 +12,7 @@ the user's explicit request.
 
 ## 1. Orient
 
-When the selected repository's `package.json` has no `factory` script, read
+When the selected repository has no factory engine, read
 `docs/without-engine.md` in the Home Repo and point every worker's brief at it.
 
 Run the selected repository's preflight: the checks in its `PREFLIGHT.md` at the

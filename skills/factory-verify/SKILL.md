@@ -5,7 +5,7 @@ description: Independently verify acceptance, review a candidate, coordinate an 
 
 # Factory Verify
 
-Use the assigned contract in dispatch; if absent, run `pnpm factory contract ROLE`.
+Use the assigned contract in dispatch; if absent, use this skill and the project's `AGENTS.md`.
 Read issue acceptance and candidate full SHA.
 Use a separate context from implementation; verify source/artifact identity and
 run your own checks. Record missing independence rather than inventing sign-off.

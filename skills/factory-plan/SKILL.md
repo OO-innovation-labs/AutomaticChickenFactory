@@ -5,7 +5,7 @@ description: Curate GitHub issues, reproduce reports, define acceptance criteria
 
 # Factory Plan
 
-Use the assigned contract in dispatch; if absent, run `pnpm factory contract ROLE`.
+Use the assigned contract in dispatch; if absent, use this skill and the project's `AGENTS.md`.
 Read current GitHub issue, root
 glossary and relevant ADRs. Inspect native dependencies and related/child issues.
 Use the configured triage labels; readiness and execution status are separate.

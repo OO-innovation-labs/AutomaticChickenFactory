@@ -97,6 +97,6 @@ write skills with `skill-creator` and `writing-for-agents`; every skill uses
 ## Gaps the graph exposes
 
 - `factory-route` relies on `factory-manager` step 1 for how to run the preflight.
-- Skills still name engine commands and `docs/factory.md`, which exist only in a
-  product checkout; skills-only use relies on `without-engine.md` mapping them.
+- Skills still name engine commands (`validate`, `assess-diff`, `dispatch`) and
+  `docs/factory.md`; skills-only use relies on `without-engine.md` mapping them.
 - `factory-operate` still names caption-delivery signals and Azure (OOlive specifics).
