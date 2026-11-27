@@ -39,5 +39,5 @@ Preparation, saved descriptions and parsed diagrams are distinct from deployed o
 visually observed behavior.
 
 Apply `delivery.testing` in `.factory/direction.json` for test selection, evidence
-reuse and escalation. During iteration use focused files or `pnpm test:affected`;
+reuse and escalation. During iteration run focused tests or the project's affected-tests command;
 formal `validate` still runs every required check on the frozen candidate.
