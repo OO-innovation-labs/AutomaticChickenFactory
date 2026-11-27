@@ -56,7 +56,8 @@ it is useful alone. `factory-manager` routes parked ideas.
 
 Before freezing, account for every path: `git status` shows no uncommitted work of
 yours, no `WIP:` commit remains, and each commit in `git log BASE..HEAD` serves the
-issue. Move any that does not to its own branch.
+issue. Move any that does not to its own branch. When the change adds or alters a
+toolchain, service or credential, update the project's `PREFLIGHT.md` in this branch.
 
 Freeze the committed candidate, run `validate`, and record its immutable report.
 Hand off to `acceptance-verifier`; source changes require fresh checks/review.
