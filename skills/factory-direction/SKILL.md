@@ -5,7 +5,7 @@ description: Set factory priorities, resolve architecture decisions, and improve
 
 # Factory Direction
 
-Use the assigned contract in dispatch or `pnpm factory contract ROLE`.
+Use the assigned contract in dispatch, or this skill and the project's `AGENTS.md`.
 Read current `.factory/direction.json` and `board`. Base improvements on job histories and evidence.
 
 Set priorities from owner goals; resolve cross-area architecture using the root
@@ -19,7 +19,7 @@ functional references; put specifications and decisions in GitHub Issues. All jo
 use current configuration directly; retain outcomes and evidence rather than policy
 copies or parallel legacy workflows.
 
-Run `pnpm test:factory`, validate changed skills and forward-test ready, ambiguous,
+Run the Home Repo's checks (`python3 scripts/check-specs.py`), validate changed skills and forward-test ready, ambiguous,
 blocked and incident work. Check invariant load and safe split choices, not only size.
 Return evidence, remaining limits and the next observation condition. Read resource,
 context and command settings from configuration and `docs/factory.md`; record observed

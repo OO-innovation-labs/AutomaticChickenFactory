@@ -5,7 +5,7 @@ description: Create or adjust project-specific roles, areas and specialist skill
 
 # Factory Role Creator
 
-Use the assigned contract in dispatch or `pnpm factory contract ROLE`. This role
+Use the assigned contract in dispatch, or this skill and the project's `AGENTS.md`. This role
 shapes the project's staffing; `factory-direction` owns the factory. Skills named
 `factory-*`, factory scripts, department contracts and `.factory/direction.json`
 limits are out of scope here; route those to `factory-direction`.
@@ -29,7 +29,8 @@ Propose the smallest project-scoped change, with the evidence behind it:
 
 State the expected result and a successful and a failing case. Obtain the owner's
 decision before applying unless already authorized. Apply to the single
-authoritative file; never copy role text elsewhere. Run `pnpm test:factory`,
-validate the new skill, and forward-test with a real or representative issue through
-`pnpm factory contract` and `dispatch`. Deliver it as one PR through the manager.
+authoritative file; never copy role text elsewhere. Validate the new skill and
+forward-test it: brief a fresh worker from a real or representative issue with the
+new role, and check that it is routed to and completes the work. Deliver it as one
+PR through the manager.
 Return evidence, remaining limits and what to observe next.

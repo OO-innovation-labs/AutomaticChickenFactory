@@ -5,7 +5,7 @@ description: Independently verify acceptance, review a candidate, coordinate an 
 
 # Factory Verify
 
-Use the assigned contract in dispatch; if absent, run `pnpm factory contract ROLE`.
+Use the assigned contract in dispatch; if absent, use this skill and the project's `AGENTS.md`.
 Read issue acceptance and candidate full SHA.
 Use a separate context from implementation; verify source/artifact identity and
 run your own checks. Record missing independence rather than inventing sign-off.
@@ -39,5 +39,5 @@ Preparation, saved descriptions and parsed diagrams are distinct from deployed o
 visually observed behavior.
 
 Apply `delivery.testing` in `.factory/direction.json` for test selection, evidence
-reuse and escalation. During iteration use focused files or `pnpm test:affected`;
+reuse and escalation. During iteration run focused tests or the project's affected-tests command;
 formal `validate` still runs every required check on the frozen candidate.

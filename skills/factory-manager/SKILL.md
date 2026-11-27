@@ -12,17 +12,19 @@ the user's explicit request.
 
 ## 1. Orient
 
-When the selected repository's `package.json` has no `factory` script, read
+When the selected repository has no factory engine, read
 `docs/without-engine.md` in the Home Repo and point every worker's brief at it.
 
-Run the selected repository's preflight: `pnpm factory preflight` when its
-`package.json` has a `factory` script, otherwise its `preflight` script. If it has
-neither, check by hand (fetch, branch and base, local changes, toolchain versions,
-required services) and create a `preflight` script there as its own idea, following
-that repository's toolchain. A preflight is read-only, prints no secrets, and reports
-per check what failed and the command that fixes it. It also probes the credentials
-the planned work needs, such as `gh` and cloud CLI logins and documentation connectors;
-resolve a failed probe before the work that depends on it. Record branch, base SHA, local
+Run the selected repository's preflight: the checks in its `PREFLIGHT.md` at the
+repository root. If it has none, check by hand (fetch, branch and base, local changes,
+toolchain versions, required services) and create `PREFLIGHT.md` there as its own
+idea, listing each check you ran. Each check names what it confirms, the read-only
+command that probes it and the command that fixes a failure; no check prints secrets.
+It also probes the credentials the planned work needs, such as `gh` and cloud CLI
+logins and documentation connectors; resolve a failed probe before the work that
+depends on it. Keep `PREFLIGHT.md` current as the project evolves: when a check is
+missing, wrong or stale, or a change adds a toolchain, service or credential, update
+it in the same branch as that change. Record branch, base SHA, local
 changes, ahead commits and the open PR for this branch (`gh pr view`). Read the
 user's request for the endpoint they want (answer, issue, PR, release, diagnosis).
 Questions that need no change are answered directly; no job, branch or PR.

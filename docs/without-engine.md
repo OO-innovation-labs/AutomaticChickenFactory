@@ -7,7 +7,7 @@ unchanged. State in handoffs that the check was manual.
 
 | Engine command | Manual equivalent |
 | --- | --- |
-| `preflight` | The project's `preflight` script; `factory-manager` step 1 when it has none |
+| `preflight` | The checks in the project's `PREFLIGHT.md`; create it per `factory-manager` step 1 when missing |
 | `contract` | The assigned role's skill plus the project's `AGENTS.md` |
 | `sync`, `board`, `show` | `gh issue list` and `gh issue view --comments`, read fresh |
 | `depend` | Native GitHub issue dependencies |

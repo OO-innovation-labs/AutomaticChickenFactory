@@ -5,7 +5,7 @@ description: Implement a ready issue in its assigned product area and hand off a
 
 # Factory Build
 
-Use the assigned contract in dispatch; if absent, run `pnpm factory contract ROLE`.
+Use the assigned contract in dispatch; if absent, use this skill and the project's `AGENTS.md`.
 Read issue/dependency outcomes,
 root glossary and relevant ADRs. Preserve unrelated work and the selected checkout;
 one integration owner coordinates supporting changes to shared files.
@@ -56,7 +56,8 @@ it is useful alone. `factory-manager` routes parked ideas.
 
 Before freezing, account for every path: `git status` shows no uncommitted work of
 yours, no `WIP:` commit remains, and each commit in `git log BASE..HEAD` serves the
-issue. Move any that does not to its own branch.
+issue. Move any that does not to its own branch. When the change adds or alters a
+toolchain, service or credential, update the project's `PREFLIGHT.md` in this branch.
 
 Freeze the committed candidate, run `validate`, and record its immutable report.
 Hand off to `acceptance-verifier`; source changes require fresh checks/review.
@@ -65,5 +66,5 @@ evidence ignored and change explanations in the PR. Publishing/release needs ses
 authorization.
 
 Apply `delivery.testing` in `.factory/direction.json` for test selection, evidence
-reuse and escalation. During iteration use focused files or `pnpm test:affected`;
+reuse and escalation. During iteration run focused tests or the project's affected-tests command;
 formal `validate` still runs every required check on the frozen candidate.
